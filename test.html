@@ -5,7 +5,7 @@
     <title>Page Title</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="index.js"></script>
+    <script src="/home/asaintd214/BlackWealth/frontend/index.js"></script>
 </head>
 <body>
   <div class="container">
@@ -28,32 +28,56 @@
     </div>
     <div class="content-wrapper">
     <!--Articles-->
-        <div class="topic">
+        <div class="topics-wrapper">
 
-            <div class="wealth-article-wrapper">
-                <div class="wealth-img-background" style="background-image:url(images/alainlulu3.jpg)">
+            <div id="topic-wrapper">
+              <div class="topic-img-background" style="background-image:url(https://images.unsplash.com/photo-1445633883498-7f9922d37a3f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">
 
                 <div class="img-text-wrapper">
-                    <div class="logo-wrapper">
-                        <img src="images/lululog.png">
-                    </div>
-
+                
                     <div class="subtitle">
-                        Generational
+                        Generational Wealth: Section 1
                     </div>
                 </div>
+              </div>
             </div>
+         
+            <div id="topic-wrapper">
+              <div class="topic-img-background" style="background-image:url(https://images.unsplash.com/photo-1597098415642-079578e90887?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">
+
+                <div class="img-text-wrapper">
+                
+                    <div class="subtitle">
+                        Generational Wealth: Section 2
+                    </div>
+                </div>
+             </div>
             </div>
+        
+        
+
+            <div id="topic-wrapper">
+              <div class="topic-img-background" style="background-image:url(https://images.unsplash.com/photo-1596510915124-38eaa5517966?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">
+
+                <div class="img-text-wrapper">
+                
+                    <div class="subtitle">
+                        Generational Wealth: Section 3
+                    </div>
+                </div>
+             </div>
+            </div>
+        </div>  
+
 </div>
 </body>
 <script>
-    const portfolioItems = document.querySelectorAll('.portfolio-item-wrapper')
+    const allTopics = document.querySelectorAll('.topics-wrapper')
 
-    portfolioItems.forEach(portfolioItem => {
-        portfolioItem.addEventListener('mouseover', () => {
-           portfolioItem.childNodes[1].classList.add('img-darken')        
+    allTopics.forEach(topic => {
+        topic.addEventListener('click', () => {
+           topic.childNodes[0].classList.document.write('yes')        
            })
-
     })
 
     portfolioItems.forEach(portfolioItem => {
