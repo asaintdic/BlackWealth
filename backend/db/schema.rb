@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_12_032036) do
+ActiveRecord::Schema.define(version: 2020_10_21_152420) do
 
   create_table "quizzes", force: :cascade do |t|
     t.string "question"
-    t.string "choices"
-    t.string "correct_choice"
     t.integer "topic_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.json "choices"
+    t.json "correct_choice"
     t.index ["topic_id"], name: "index_quizzes_on_topic_id"
   end
 

@@ -1,28 +1,46 @@
-// events: the page loads, user sees the first page(intro), pagination/button to section 1, then take quiz buton at bottom, click answers
-// const readInfo = "http://localhost:3000/topics"
-// const quizzes = "http://localhost:3000/quizzes"
-// //  
-// document.addEventListener('DomContentLoaded', fetchData())
+const topics = new TopicAdapter
+let quizzes = new QuizAdapter
 
-// function fetchData() {
-//     fetchInfo()
-//     fetchQuizzes()
-// }
-const quizURL = "http://localhost:3000/quizzes/1"
-function fetchQuiz() {
-    fetch(quizURL)
-    .then(res => res.json())
-    .then(quiz => renderQuiz(quiz))
-    .catch(error => document.write("Request Failed, please try again", error))
+window.addEventListener('load', () => {
+    fetchItems()
+})
+
+
+function fetchItems(){
+
+topics.fetchTopics()
+quizzes.fetchQuizzes()
 }
 
-//  function renderQuiz(q) {
-//      const id = document.getElementById("quizzes") 
-//      Object.data(q.).forEach(qz => {               
-//          const p = document.createElement('p)')     
-//          p.innerHTML = qz[2]  
-//          id.appendChild(p)
-//      })
+//rendering sections and quizzes on page
 
-//  }
+//  <div id="quiz"></div>
+// <button id="submit">Submit Quiz</button>
+// <div id="results"></div> 
 
+// const quizContainer = document.getElementById('quiz')
+// const resultsContainer = document.getElementById('results')
+// const submitButton = document.getElementById('submit')
+
+// function readSection1(){}
+// function takeQuiz(){}
+
+
+// takeQuizButton.addEventListener('click', takeQuiz)
+
+// readSection1Button.addEventListener('click', showSection1);
+
+
+
+// function buildQuiz(){}
+// function showResults(){}
+
+// buildQuiz();
+
+// submitButton.addEventListener('click', showResults)
+
+// function buildQuiz(){
+//     const output =[]
+    
+
+// }
