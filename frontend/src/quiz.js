@@ -1,14 +1,16 @@
 class Quiz{
     constructor(quiz, quizAttributes) {
         this.id = quiz.id;
+        this.name = quizAttributes.name;
+        this.score = quizAttributes.score;
         this.question = quizAttributes.question;
         this.choices = quizAttributes.choices;
         this.choiceA = quizAttributes.choices['a']
         this.choiceB = quizAttributes.choices['b']
         this.choiceC = quizAttributes.choices['c']
         this.choiceD = quizAttributes.choices['d']
-        this.correct_choice = quizAttributes.correct_choice;
-        this.correct_choiceText = quizAttributes.correct_choice;
+        this.correct_choice = Object.values(quizAttributes.correct_choice)[0];
+        debugger
         this.topic_id = quizAttributes.topic_id;
         
         this.quizAdapter = new QuizAdapter;
@@ -57,67 +59,12 @@ class Quiz{
             choice.addEventListener('click', e => {
                 const selectedChoice = e.target;
                 const selectedAnswer = selectedChoice.innerHTML
-               console.log(`${this.correct_choice}`)
+               console.log(selectedAnswer)
                 
                 
             })
         })
     }
-        
-   
-    
-    //     const question = document.getElementById("question");
-    //     const choices = Array.from(document.getElementsByClassName("choice-text"));
-
-    //     let currentQuestion = {};
-    //     let acceptingAnswers = false;
-    //     let score = 0;
-    //     let questionCounter = 0;
-    //     let availableQuesions = [];
-
-    //     const CORRECT_BONUS = 10;
-    //     const MAX_QUESTIONS = 3;
-
-    //     questionCounter = 0;
-    //     score = 0;
-    //     availableQuesions = [...Quiz.all];// ${this.questions}
-        
-    // //     getNewQuestion();
-    // //   }    
-    // //   getNewQuestion = () => {
-    //         if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
-    //           return window.location.assign("/end.html");
-    //         }
-    //         questionCounter++;
-    //         const questionIndex = Math.floor(Math.random() * availableQuesions.length);
-    //         currentQuestion = availableQuesions[questionIndex];
-    //         question.innerText = currentQuestion.question
-            
-    //     choices.forEach(choice => {
-    //         const number = choice.dataset["number"];
-    //         choice.innerText = `${this.choices[number]}`
-    //       });
-    // //    }
-    //     choices.forEach(choice => {
-    //         choice.addEventListener("click", e => {
-    //           if (!acceptingAnswers) return;
-          
-    //           acceptingAnswers = false;
-    //           const selectedChoice = e.target;
-    //           const selectedAnswer = selectedChoice.dataset["number"];
-    //          console.log(selectedChoice)
-    //           const classToApply =
-    //             selectedAnswer == currentQuestion.correct_choice ? "correct" : "incorrect";
-          
-    //           selectedChoice.parentElement.classList.add(classToApply);
-          
-    //         //   setTimeout(() => {
-    //         //     selectedChoice.parentElement.classList.remove(classToApply);
-    //         //     // getNewQuestion();
-    //         //   }, 1000);
-    //         });
-    //     });
-    
-   
+  
 }
 Quiz.all = []

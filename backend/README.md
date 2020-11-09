@@ -137,3 +137,56 @@ window.addEventListener('load', () => {
     })
        
 })
+
+
+    //     const question = document.getElementById("question");
+    //     const choices = Array.from(document.getElementsByClassName("choice-text"));
+
+    //     let currentQuestion = {};
+    //     let acceptingAnswers = false;
+    //     let score = 0;
+    //     let questionCounter = 0;
+    //     let availableQuesions = [];
+
+    //     const CORRECT_BONUS = 10;
+    //     const MAX_QUESTIONS = 3;
+
+    //     questionCounter = 0;
+    //     score = 0;
+    //     availableQuesions = [...Quiz.all];// ${this.questions}
+        
+    // //     getNewQuestion();
+    // //   }    
+    // //   getNewQuestion = () => {
+    //         if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+    //           return window.location.assign("/end.html");
+    //         }
+    //         questionCounter++;
+    //         const questionIndex = Math.floor(Math.random() * availableQuesions.length);
+    //         currentQuestion = availableQuesions[questionIndex];
+    //         question.innerText = currentQuestion.question
+            
+    //     choices.forEach(choice => {
+    //         const number = choice.dataset["number"];
+    //         choice.innerText = `${this.choices[number]}`
+    //       });
+    // //    }
+    //     choices.forEach(choice => {
+    //         choice.addEventListener("click", e => {
+    //           if (!acceptingAnswers) return;
+          
+    //           acceptingAnswers = false;
+    //           const selectedChoice = e.target;
+    //           const selectedAnswer = selectedChoice.dataset["number"];
+    //          console.log(selectedChoice)
+    //           const classToApply =
+    //             selectedAnswer == currentQuestion.correct_choice ? "correct" : "incorrect";
+          
+    //           selectedChoice.parentElement.classList.add(classToApply);
+          
+    //         //   setTimeout(() => {
+    //         //     selectedChoice.parentElement.classList.remove(classToApply);
+    //         //     // getNewQuestion();
+    //         //   }, 1000);
+    //         });
+    //     });

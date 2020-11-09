@@ -30,16 +30,7 @@ class Topic{
    }  
 
 
-//    renderArticle(){  
-//     const article= `<article>
-//                     <h2> ${this.name}<h2>
-//                     <p>${this.body}</p>
-//                     <h6>${this.url}<h6>
-//                     </article>`
-
-//     document.querySelector('#topics').innerHTML += article
-    
-//     }    
+//    
 }
 
 Topic.all = []

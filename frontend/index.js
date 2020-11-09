@@ -10,12 +10,14 @@ window.addEventListener('load', () => {
             const submit = document.getElementById('submit')
             quizButton.style.visibility = "hidden"
             submit.style.visibility = "hidden";
-        button.addEventListener('click', (e) => {
+    
+     button.addEventListener('click', (e) => {
             topics.fetchTopics(e);
             button.style.display = "none";
             submit.style.visibility = "hidden";
             quizButton.style.visibility = "visible";
-        quizButton.addEventListener('click', (e) => {
+   
+    quizButton.addEventListener('click', (e) => {
             submit.style.visibility = "visible"
             quizButton.style.visibility = "hidden"
 
@@ -24,8 +26,8 @@ window.addEventListener('load', () => {
           
             quizzes.fetchQuizzes(e)
 
-        
-    // submit.addEventListener('click', Quiz.showResults)        
+    submit.addEventListener('click', quizzes.submitQuizResults()) 
+           
     
         }) 
     })
