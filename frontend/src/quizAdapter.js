@@ -12,19 +12,29 @@ class QuizAdapter{
               })
             } )
     }
-    quizResults(){
+    submitQuizResults(){
         let formData = {
             name: '',
             score: ''
         };
-        fetch('http://localhost:3000/quizzes', {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json;charset=utf-8'
-              
-            },
-            body: JSON.stringify(formData)
-        })
+        
+        
+            fetch('http://localhost:3000/quizzes',  {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json;charset=utf-8',
+                    "Accept": "application/json"
+                  
+                },
+                body: JSON.stringify(formData),
+            })
+            .then(res => res.json())
+            .then(formData => {
+                console.log('Success:', formData)
+            })
+            .catch((error) => {
+                console.log('Error')
+            });
 
     }
 }
