@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_21_152420) do
+ActiveRecord::Schema.define(version: 2020_11_09_144952) do
 
   create_table "quizzes", force: :cascade do |t|
     t.string "question"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2020_10_21_152420) do
     t.datetime "updated_at", precision: 6, null: false
     t.json "choices"
     t.json "correct_choice"
+    t.string "name"
+    t.integer "score"
     t.index ["topic_id"], name: "index_quizzes_on_topic_id"
   end
 

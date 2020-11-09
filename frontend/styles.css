@@ -5,7 +5,9 @@ body {
 }
 
 .container {
-    display: grid;
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(192,230,180,1) 0%, rgba(203,244,205,1) 0%, rgba(252,252,252,1) 100%);
+
     grid-template-columns: 1fr
 }
 /*  nav styles   */
@@ -55,14 +57,50 @@ body {
 
 /* quiz styles */
 #quiz {
-    border:#5AB029 3px solid;
+    /* border:#5AB029 3px solid;
     padding:10px 40px 40px 40px;
     background-color:#E5FCE3;
-    width:50%;}
-
+    width:50%; */
+    /* border-radius: 10px;
+    box-shadow: 0px 5px 20px rgb(71, 71, 71);
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: transparent;
+    align-items: left;
+    min-width: 40% */
 }
 
+#topics {
+    /* border:#5c7acc 3px solid;
+    padding:10px 40px 40px 40px;
+    background-color:#5c7acc;
+    width:50%; */
+    /* border-radius: 10px;
+    box-shadow: 0px 5px 20px rgb(71, 71, 71);
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background:transparent;
+    align-items: center;
+    min-width: 40% */
+}
+
+.buttons-container {
+    
+
+}
 /* portfoliostyles */
+#generational-wealth {
+    transition-duration: 0.4s;
+  }
+  
+  #generational-wealth:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
 
 .topics-wrapper {
     display: grid;
@@ -71,6 +109,7 @@ body {
 
 .topic-wrapper {
     position: relative;
+    
 }
 
 .topic-img-background {
@@ -79,6 +118,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    
 }
 
 .img-text-wrapper {
@@ -92,13 +132,14 @@ body {
     text-align: center;
     padding-left: 100px;
     padding-right: 100px;
+
 }
 
-.logo-wrapper img {
+/* /* .logo-wrapper img {
     width: 50%;
     margin-bottom: 20px;
     
-}
+} */
 /* needs to be more specific with selector */
 .img-text-wrapper .subtitle {
     transition: 1s;
@@ -133,4 +174,40 @@ body {
 .profile-content-wrapper h1{
     color: lightseagreen;
 
-}
+} 
+
+/* CHoices */
+.choice-container {
+    display: flex;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    font-size: 1.8rem;
+    border: 0.1rem solid rgb(86, 165, 235, 0.25);
+    background-color: white;
+  }
+  
+  .choice-container:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+  }
+  
+  .choice-prefix {
+    padding: 1.5rem 2.5rem;
+    background-color: #56a5eb;
+    color: white;
+  }
+  
+  .choice-text {
+    padding: 1.5rem;
+    width: 100%;
+  }
+  
+  .correct {
+    background-color: #28a745;
+  }
+  
+  .incorrect {
+    background-color: #dc3545;
+  }

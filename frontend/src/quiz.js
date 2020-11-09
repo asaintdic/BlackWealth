@@ -3,38 +3,121 @@ class Quiz{
         this.id = quiz.id;
         this.question = quizAttributes.question;
         this.choices = quizAttributes.choices;
+        this.choiceA = quizAttributes.choices['a']
+        this.choiceB = quizAttributes.choices['b']
+        this.choiceC = quizAttributes.choices['c']
+        this.choiceD = quizAttributes.choices['d']
         this.correct_choice = quizAttributes.correct_choice;
+        this.correct_choiceText = quizAttributes.correct_choice;
         this.topic_id = quizAttributes.topic_id;
-        this.quizAdapter = new QuizAdapter;
-    }
-    allChoices()  {
-        for(letter in this.choices){
-            return
-            const choiceA = `${letter[0]}`
-            const choiceB = `${letter[1]}`
-            const choiceC = `${letter[2]}`
-            const choiceD = `${letter[3]}`
-        }
-    }
-
-
-    renderQuiz = () => {
-        this.allChoices()
-        const quizContainer = document.getElementById('quiz')
-        const resultsContainer = document.getElementById('results')
-        const submitButton = document.getElementById('submit')
-        const question = document.createElement('h3')
-        const choices = document.createElement('label')
-        const p3 = document.createElement('p')
-        const p4 = document.createElement('p')
-        const p5 = document.createElement('p')
         
-          question.innerHTML = `${this.question}`
-          p3.innerHTML = choiceA
+        this.quizAdapter = new QuizAdapter;
+        Quiz.all.push(this)
+    } 
+    
 
+    
+    
+    
+    renderQuiz = () => {
+        
+        return ` <div class="container">
+                    <div id="game" class="justify-center flex-column">
+                        <h2 id="question">${this.question}</h2>
+                    <div class="choice-container">
+                        <p class="choice-prefix">A</p>
+                        <p class="choice-text" data-number="a">${this.choiceA}</p>
+                    </div>
+                    <div class="choice-container">
+                        <p class="choice-prefix">B</p>
+                        <p class="choice-text" data-number="b">${this.choiceB}</p>
+                    </div>
+                    <div class="choice-container">
+                        <p class="choice-prefix">C</p>
+                        <p class="choice-text" data-number="c">${this.choiceC}</p>
+                    </div>
+                    <div class="choice-container">
+                        <p class="choice-prefix">D</p>
+                        <p class="choice-text" data-number="d">${this.choiceD}</p>
+                    </div>
+                    <div class="choice-container">
+                       <div id='answer' style="display: none;">
+                        <p class="choice-prefix">D</p>
+                        <p class="choice-text" data-number="correct">${this.correct_choice}</p>
+                       </div>
+                    </div>
+                </div>
+                </div>`
+    }
+    pickAnswer = () => {
+        const question = document.getElementById("question");
+        const choices = Array.from(document.getElementsByClassName("choice-text"));
 
-          quizContainer.appendChild(question)
-          quizContainer.appendChild(p3)
-    }           
+        choices.forEach(choice => {
+            choice.addEventListener('click', e => {
+                const selectedChoice = e.target;
+                const selectedAnswer = selectedChoice.innerHTML
+               console.log(`${this.correct_choice}`)
+                
+                
+            })
+        })
+    }
+        
+   
+    
+    //     const question = document.getElementById("question");
+    //     const choices = Array.from(document.getElementsByClassName("choice-text"));
+
+    //     let currentQuestion = {};
+    //     let acceptingAnswers = false;
+    //     let score = 0;
+    //     let questionCounter = 0;
+    //     let availableQuesions = [];
+
+    //     const CORRECT_BONUS = 10;
+    //     const MAX_QUESTIONS = 3;
+
+    //     questionCounter = 0;
+    //     score = 0;
+    //     availableQuesions = [...Quiz.all];// ${this.questions}
+        
+    // //     getNewQuestion();
+    // //   }    
+    // //   getNewQuestion = () => {
+    //         if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+    //           return window.location.assign("/end.html");
+    //         }
+    //         questionCounter++;
+    //         const questionIndex = Math.floor(Math.random() * availableQuesions.length);
+    //         currentQuestion = availableQuesions[questionIndex];
+    //         question.innerText = currentQuestion.question
+            
+    //     choices.forEach(choice => {
+    //         const number = choice.dataset["number"];
+    //         choice.innerText = `${this.choices[number]}`
+    //       });
+    // //    }
+    //     choices.forEach(choice => {
+    //         choice.addEventListener("click", e => {
+    //           if (!acceptingAnswers) return;
+          
+    //           acceptingAnswers = false;
+    //           const selectedChoice = e.target;
+    //           const selectedAnswer = selectedChoice.dataset["number"];
+    //          console.log(selectedChoice)
+    //           const classToApply =
+    //             selectedAnswer == currentQuestion.correct_choice ? "correct" : "incorrect";
+          
+    //           selectedChoice.parentElement.classList.add(classToApply);
+          
+    //         //   setTimeout(() => {
+    //         //     selectedChoice.parentElement.classList.remove(classToApply);
+    //         //     // getNewQuestion();
+    //         //   }, 1000);
+    //         });
+    //     });
+    
+   
 }
 Quiz.all = []

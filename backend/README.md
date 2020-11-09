@@ -58,3 +58,82 @@ function fetchQuiz() {
 
 const allSections =
 function renderSections
+
+
+// 
+// function fetchItems(){
+
+// topics.fetchTopics()
+// quizzes.fetchQuizzes()
+
+
+// function showSection() {
+// let section1 = document.getElementById('section-1')
+
+// section1.addEventListener('click', renderTopic())
+// }
+
+
+//rendering sections and quizzes on page
+
+<!-- //  <div id="quiz"></div>
+// <button id="submit">Submit Quiz</button>
+// <div id="results"></div>  -->
+
+// const quizContainer = document.getElementById('quiz')
+// const resultsContainer = document.getElementById('results')
+// const submitButton = document.getElementById('submit')
+
+// function readSection1(){}
+// function takeQuiz(){}
+
+
+// takeQuizButton.addEventListener('click', takeQuiz)
+
+// readSection1Button.addEventListener('click', showSection1);
+
+
+
+// function buildQuiz(){}
+// function showResults(){}
+
+// buildQuiz();
+
+// submitButton.addEventListener('click', showResults)
+
+// function buildQuiz(){
+//     const output =[]
+
+const topics = new TopicAdapter
+const quizzes = new QuizAdapter
+
+window.addEventListener('load', () => {
+    
+    
+    const button = document.getElementById(`generational-wealth`)
+    const quizButton = document.getElementById('quiz-button')
+    const tp    = document.getElementById('topics')
+
+    quizButton.style.visibility = "hidden"
+    
+    button.addEventListener('click', (e) => {
+        
+        topics.fetchTopics(e);
+        button.style.display = "none";
+        quizButton.style.visibility = "visible";
+        
+        quizButton.addEventListener('click', (e) => {
+            quizButton.style.visibility = "hidden"
+            document.getElementById('topics').style.display = "none";
+                    // let topic = document.getElementById('topics');
+                // if  (topic.style.display = "none") {
+                //     topic.style.display = "block";
+                // } else {
+                //     topic.style.display = 'none';
+                // }
+                
+            quizzes.fetchQuizzes(e)
+        }) 
+    })
+       
+})

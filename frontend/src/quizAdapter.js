@@ -6,9 +6,25 @@ class QuizAdapter{
         .then(quizzes => {
             quizzes.data.forEach(quiz => {
                 let newQuiz = new Quiz(quiz, quiz.attributes)
-                // document.getElementById('quiz').innerHTML += newQuiz.renderQuiz()
-                newQuiz.renderQuiz()
+                
+                document.querySelector('#quiz').innerHTML += newQuiz.renderQuiz()
+                newQuiz.pickAnswer()
               })
             } )
+    }
+    quizResults(){
+        let formData = {
+            name: '',
+            score: ''
+        };
+        fetch('http://localhost:3000/quizzes', {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+              
+            },
+            body: JSON.stringify(formData)
+        })
+
     }
 }

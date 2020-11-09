@@ -5,7 +5,11 @@
     <title>Page Title</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="/home/asaintd214/BlackWealth/frontend/index.js"></script>
+    <script src="src/topicAdapter.js"></script>
+    <script src="src/topic.js"></script>
+    <script src="src/quizAdapter.js"></script>
+    <script src="src/quiz.js"></script>
+    <script src="index.js"></script>
 </head>
 <body>
   <div class="container">
@@ -27,11 +31,16 @@
         </div>
     </div>
     <div class="content-wrapper">
+        
+        <h1> Welcome To BlackWealth!</h1>
+        <h3>Did you know that in 1968, a typical middle-class black household had $6,674 in wealth compared with $70,786 for the typical middle-class white household? And according to data from the historical Survey of Consumer Finances that has been adjusted for inflation. In 2016, the typical middle-class black household had $13,024 in wealth versus $149,703 for the median white household, an even larger gap in percentage terms.
+            With this gap getting larger, access to financial literacy resources has never been more crucial!
+        </h3>
     <!--Articles-->
         <div class="topics-wrapper">
 
-            <div id="topic-wrapper">
-              <div class="topic-img-background" style="background-image:url(https://images.unsplash.com/photo-1445633883498-7f9922d37a3f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">
+            <div class="topic-wrapper">
+              <div class="topic-img-background" style="background-image:url(https://images.unsplash.com/photo-1445633883498-7f9922d37a3f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)">
 
                 <div class="img-text-wrapper">
                 
@@ -42,8 +51,8 @@
               </div>
             </div>
          
-            <div id="topic-wrapper">
-              <div class="topic-img-background" style="background-image:url(https://images.unsplash.com/photo-1597098415642-079578e90887?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">
+            <div class="topic-wrapper">
+              <div class="topic-img-background" style="background-image:url(https://images.unsplash.com/photo-1597098415642-079578e90887?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)" >
 
                 <div class="img-text-wrapper">
                 
@@ -56,9 +65,10 @@
         
         
 
-            <div id="topic-wrapper">
-              <div class="topic-img-background" style="background-image:url(https://images.unsplash.com/photo-1596510915124-38eaa5517966?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">
-
+            <div class="topic-wrapper">
+              <div class="topic-img-background" style="background-image:url(https://images.unsplash.com/photo-1596510915124-38eaa5517966?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)">
+                <button id='generational-wealth'>Generational Wealth</button>
+                <button id="quiz-button">Take Quiz</button>
                 <div class="img-text-wrapper">
                 
                     <div class="subtitle">
@@ -71,7 +81,7 @@
 
 </div>
 </body>
-<script>
+<!--<script>
     const allTopics = document.querySelectorAll('.topics-wrapper')
 
     allTopics.forEach(topic => {
@@ -86,5 +96,5 @@
            })
 
     })
-</script>
+</script>-->
 </html>

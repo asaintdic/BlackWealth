@@ -38,4 +38,59 @@
 
 # Quiz.create(question: "What is Generational Wealth?", choices: "A)The average of every millenial’s assets, B)Good memories and healthy genetics that parents pass onto their children, C)Family or legacy financial resources that is left behind from one generation to another, D)How the Fed allocates stimulus checks across a Gen X, Gen Y, and Gen Z", correct_choice: "C)Family or legacy financial resources that is left behind from one generation to another", topic_id: 1)
 
-Quiz.create(question: "What is Generational Wealth?", choices: {"a": "The average of every millenial’s assets", "b": "Good memories and healthy genetics that parents pass onto their children", "c": "Family or legacy financial resources that is left behind from one generation to another", "d": "How the Fed allocates stimulus checks across a Gen X, Gen Y, and Gen Z"}, correct_choice: {"c": "Family or legacy financial resources that is left behind from one generation to another"}, topic_id: 1)
+# Quiz.create(
+#         question: "What is Generational Wealth?", 
+#         choices: {
+#         "a": "The average of every millenial’s assets", 
+#         "b": "Good memories and healthy genetics that parents pass onto their children", 
+#         "c": "Family or legacy financial resources that is left behind from one generation to another", 
+#         "d": "How the Fed allocates stimulus checks across a Gen X, Gen Y, and Gen Z"
+#         }, 
+# correct_choice: {
+#             "c": "Family or legacy financial resources that is left behind from one generation to another"
+#         }, 
+#         topic_id: 1
+# )
+
+# Quiz.create(
+#         question: "What's a way to build generational wealth?", 
+#         choices: {
+#         "a": "Time travel to get today's loterry numbers", 
+#         "b": "Get a life insurance policy to offset funeral costs, and leave your children with a sizaeble fund", 
+#         "c": "Get recruited into an MLM business and recruit your children", 
+#         "d": "Expect the government to pass a stimulus bill and give the money to your grandkids"
+#         }, 
+# correct_choice: {
+#         "b": "Get a life insurance policy to offset funeral costs, and leave your children with a sizaeble fund"
+#         }, 
+#         topic_id: 1
+# )
+
+# Quiz.create(
+#         question: "What percentage of family businesses pass over to the next generation?", 
+#         choices: {
+#         "a": ">30%", 
+#         "b": "50%", 
+#         "c": "10%", 
+#         "d": "90%"
+#         }, 
+# correct_choice: {
+#         "a": ">30%"
+#         }, 
+#         topic_id: 1
+# )
+
+Quiz.create(
+        question: "What percentage of families lose their wealth in the second generation", 
+        choices: {
+        "a": "40%", 
+        "b": "60%", 
+        "c": "30%", 
+        "d": "70%"
+        }, 
+correct_choice: {
+        "d": "70%"
+        }, 
+        topic_id: 1
+)
+
