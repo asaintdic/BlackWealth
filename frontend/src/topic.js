@@ -18,14 +18,17 @@ class Topic{
    renderTopic() {
         const topicsDiv = document.getElementsByClassName("topics-wrapper")
         const topicDiv  = document.getElementById('topics')
+        // const quizButton = document.getElementById('quiz-button')
         
         return `
         <div data-id=${this.id}>
             <article>
-            <h2> ${this.name}<h2>
-            <h3>${this.contributor}</h3>
+            <h2>Section: ${this.section} </h2>
+            <h3> ${this.name}<h3>
+            <h4>${this.contributor}</h4>
             <p>${this.body}</p>
             <h6>${this.url}<h6>
+            <button id='section-quiz-button'>Take Section: ${this.section} Quiz</button>
         </div>`
    }  
 
