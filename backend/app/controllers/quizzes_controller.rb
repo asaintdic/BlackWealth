@@ -1,55 +1,40 @@
 class QuizzesController < ApplicationController
   before_action :set_quiz, only: [:show, :update, :destroy]
 
-  # GET /quizzes
+ 
   def index
-    quizzes = Quiz.all
+    @quizzes = Quiz.all
 
-    render json: QuizSerializer.new(quizzes)
+    render json: QuizSerializer.new(@quizzes)
   end
 
-  # GET /quizzes/1
+ 
   def show
-    quiz = Quiz.find(params[:id])
-    # options = {
-    #   include: [:topic]
-    # }
-    render json: QuizSerializer.new(quiz)
+    @quiz = Quiz.find(params[:id])
+    
+    render json: QuizSerializer.new(@quiz)
   end
 
-  # POST /quizzes
-  # def create
-  #   @quiz = Quiz.new(quiz_params)
+  
+  def create
+    
+    @quiz = Quiz.new(quiz_params)
+    @quiz.score = 100
+    if @quiz.save
+      render json: QuizSerializer.new(@quiz)
+      render json: @quiz.errors, status: :unprocessable_entity
+    end
+  end
 
-  #   if @quiz.save
-  #     render json: @quiz, status: :created, location: @quiz
-  #   else
-  #     render json: @quiz.errors, status: :unprocessable_entity
-  #   end
-  # end
-
-  # # PATCH/PUT /quizzes/1
-  # def update
-  #   if @quiz.update(quiz_params)
-  #     render json: @quiz
-  #   else
-  #     render json: @quiz.errors, status: :unprocessable_entity
-  #   end
-  # end
-
-  # # DELETE /quizzes/1
-  # def destroy
-  #   @quiz.destroy
-  # end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+   
     def set_quiz
       @quiz = Quiz.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
+   
     def quiz_params
-      params.require(:quiz).permit(:question, :choices, :correct_choice, :topic_id)
+      params.require(:quiz).permit(:name, :question, :choices, :correct_choice, :topic_id)
     end
 end
